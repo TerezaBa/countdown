@@ -49,8 +49,8 @@ document.customForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const minutesValue = parseFloat(this.minutes.value);
 
-  if (isNaN(minutesValue)) {
-    alert("You have to enter a number.");
+  if (isNaN(minutesValue) || minutesValue < 0) {
+    alert("You have to enter a valid number of minutes.");
   } else {
     const customSecs = this.minutes.value * 60;
     timer(customSecs);
